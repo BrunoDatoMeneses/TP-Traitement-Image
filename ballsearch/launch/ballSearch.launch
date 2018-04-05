@@ -1,0 +1,34 @@
+<launch>
+
+    <group ns="nav">
+    
+        <!-- BGR TO RGB CONVERTER -->
+        <node pkg="ballsearch" name="bgr_to_rgb_converter" type="bgr_to_rgb_converter_node"/>
+    
+        <!-- COMMAND -->
+        <node pkg="ballsearch" name="command" type="command_node"/>
+    
+        <!-- BALL SEARCH -->
+        <node pkg="ballsearch" name="ballSearch" type="ballSearch_node"/>
+
+        <!-- RGB CAMERA STREAM -->
+        <node name="image_view_camera_color" pkg="image_view" type="image_view">
+            <remap from="image" to="/nav/camera/color" />
+        </node>
+    
+        <!-- THRESHOLD IMAGE STREAM -->
+        <node name="image_view_traitement" pkg="image_view" type="image_view">
+            <remap from="image" to="/nav/traitement_image" />
+        </node>
+        
+        <!-- DEPTH IMAGE STREAM -->
+        <node name="image_view_depth" pkg="image_view" type="image_view">
+            <remap from="image" to="/camera/depth_registered/hw_registered/image_rect" />
+        </node>
+
+	<param name="/depthimage_to_laserscan/range_min" type="double" value="0.7" />
+        <param name="/depthimage_to_laserscan/range_max" type="double" value="100.0" />
+ 
+    </group>
+    
+</launch>
