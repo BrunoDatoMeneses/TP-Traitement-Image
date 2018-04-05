@@ -139,7 +139,7 @@ Objet * BallSearch::Recherche_balle(unsigned char* raw, int  width, int height, 
             {
                 if ( listeObj[l].Surface > surface_max  )
                 {
-                    if((listeObj[l].Compactness > 0.9) && (listeObj[l].Compactness < 1.6))
+                    if((listeObj[l].Compactness > 0.4) && (listeObj[l].Compactness < 0.7))
                     {
                         num_obj = l;
                     }
