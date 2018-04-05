@@ -38,7 +38,7 @@ void TurtleBotCommand::callBackCommandReceived(const ballsearch::command& msg)
     ROS_INFO("Command received...");
     commandAsked = msg;
 
-    if(commandAsked.distance>0.9)
+    if(commandAsked.distance>0)
     {
         TurtleBotCommand::moveAndTurn(3*commandAsked.linearVelocity*commandAsked.distance, commandAsked.angularVelocity*commandAsked.angle*3);
     }

@@ -80,7 +80,7 @@ int main(int argc, char **argv)
             ROS_INFO("Center of the ball : (%d,%d) ", obj->Ucg, obj->Vcg);
             ROS_INFO("Compacite : %lf",obj->Compactness);
 
-            if (!ballSearch.getTouchedObstacle())
+            if (!ballSearch.getTouchedObstacle() and ((obj->Dist)>0.9))
             {
 
                 if (obj->Theta<0)

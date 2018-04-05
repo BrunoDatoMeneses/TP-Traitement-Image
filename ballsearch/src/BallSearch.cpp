@@ -97,7 +97,7 @@ Objet * BallSearch::Recherche_balle(unsigned char* raw, int  width, int height, 
 {
     // color of the ball :
     // 0: red
-    // 1: gree
+    // 1: green
     // 2 : blue
 
     int h,w;
